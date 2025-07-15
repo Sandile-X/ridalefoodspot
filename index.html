@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridale Food Spot - Fresh Fast Food Delivered</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="logo.jpg" alt="Ridale Food Spot" class="logo">
+                    <span class="logo-text">Ridale Food Spot</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <button class="cart-btn" onclick="toggleCart()">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Ridale Food Spot</h1>
+            <p class="hero-subtitle">Fresh, Fast & Delicious Food Delivered to Your Door</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToMenu()">Order Now</button>
+                <button class="btn btn-secondary" href="tel:0712351559">
+                    <i class="fas fa-phone"></i> Call to Order
+                </button>
+            </div>
+            <div class="delivery-info">
+                <div class="delivery-item">
+                    <i class="fas fa-clock"></i>
+                    <span>30 Min Delivery</span>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-star"></i>
+                    <span>Fresh Quality</span>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Free Delivery Over R100</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="bilboard hero.jpg" alt="Delicious Food" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <p class="section-subtitle">Fresh ingredients, bold flavors, unbeatable taste</p>
+            
+            <div class="menu-tabs">
+                <button class="tab-btn active" onclick="showCategory('kota')">Kota Specials</button>
+                <button class="tab-btn" onclick="showCategory('dagwood')">Dagwood</button>
+                <button class="tab-btn" onclick="showCategory('wings')">Wings</button>
+                <button class="tab-btn" onclick="showCategory('sweets')">Sweet Treats</button>
+                <button class="tab-btn" onclick="showCategory('coffee')">Coffee & Drinks</button>
+            </div>
+
+            <!-- Kota Menu -->
+            <div id="kota" class="menu-category active">
+                <h3 class="category-title">Kota Specials</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="kota menu.jpg" alt="Kota Special" class="menu-img">
+                        <div class="menu-info">
+                            <h4>Classic Kota</h4>
+                            <p>Quarter loaf with chips, polony, cheese, tomato & sauce</p>
+                            <div class="menu-price">R25.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Classic Kota', 25.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Chicken Kota</h4>
+                            <p>Quarter loaf with chips, grilled chicken, cheese & salad</p>
+                            <div class="menu-price">R35.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Chicken Kota', 35.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Beef Kota</h4>
+                            <p>Quarter loaf with chips, beef patty, cheese & fresh salad</p>
+                            <div class="menu-price">R40.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Beef Kota', 40.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Deluxe Kota</h4>
+                            <p>Quarter loaf with chips, chicken, beef, cheese, egg & salad</p>
+                            <div class="menu-price">R50.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Deluxe Kota', 50.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dagwood Menu -->
+            <div id="dagwood" class="menu-category">
+                <h3 class="category-title">Dagwood Specials</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="dagwood menu.jpg" alt="Dagwood" class="menu-img">
+                        <div class="menu-info">
+                            <h4>Classic Dagwood</h4>
+                            <p>Layers of meat, cheese, lettuce, tomato on fresh bread</p>
+                            <div class="menu-price">R30.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Classic Dagwood', 30.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Chicken Dagwood</h4>
+                            <p>Grilled chicken, cheese, lettuce, tomato & mayo</p>
+                            <div class="menu-price">R35.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Chicken Dagwood', 35.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Beef Dagwood</h4>
+                            <p>Beef patty, cheese, lettuce, tomato & special sauce</p>
+                            <div class="menu-price">R38.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Beef Dagwood', 38.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wings Menu -->
+            <div id="wings" class="menu-category">
+                <h3 class="category-title">Wings & Sides</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="wings.jpg" alt="Wings" class="menu-img">
+                        <div class="menu-info">
+                            <h4>Hot Wings (6pc)</h4>
+                            <p>Spicy chicken wings with your choice of sauce</p>
+                            <div class="menu-price">R45.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Hot Wings 6pc', 45.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Wing Platter (12pc)</h4>
+                            <p>12 wings with chips and coleslaw</p>
+                            <div class="menu-price">R75.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Wing Platter 12pc', 75.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Chips & Gravy</h4>
+                            <p>Crispy chips with rich gravy</p>
+                            <div class="menu-price">R20.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Chips & Gravy', 20.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet Treats Menu -->
+            <div id="sweets" class="menu-category">
+                <h3 class="category-title">Sweet Treats</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="sweet stuff.jpg" alt="Sweet Treats" class="menu-img">
+                        <div class="menu-info">
+                            <h4>Chocolate Muffin</h4>
+                            <p>Rich chocolate muffin with chocolate chips</p>
+                            <div class="menu-price">R15.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Chocolate Muffin', 15.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Vanilla Cupcake</h4>
+                            <p>Fluffy vanilla cupcake with buttercream frosting</p>
+                            <div class="menu-price">R18.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Vanilla Cupcake', 18.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Milkshake</h4>
+                            <p>Thick milkshake - vanilla, chocolate, or strawberry</p>
+                            <div class="menu-price">R25.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Milkshake', 25.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coffee & Drinks Menu -->
+            <div id="coffee" class="menu-category">
+                <h3 class="category-title">Coffee & Drinks</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="coffee.jpg" alt="Coffee" class="menu-img">
+                        <div class="menu-info">
+                            <h4>Cappuccino</h4>
+                            <p>Rich espresso with steamed milk foam</p>
+                            <div class="menu-price">R18.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Cappuccino', 18.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Latte</h4>
+                            <p>Smooth espresso with steamed milk</p>
+                            <div class="menu-price">R20.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Latte', 20.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-info">
+                            <h4>Cold Drink</h4>
+                            <p>Coca Cola, Fanta, Sprite (330ml)</p>
+                            <div class="menu-price">R12.00</div>
+                            <button class="add-to-cart" onclick="addToCart('Cold Drink', 12.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Ridale Food Spot</h2>
+                    <p>At Ridale Food Spot, we're passionate about serving fresh, delicious fast food that brings people together. Our commitment to quality ingredients and bold flavors has made us a favorite in the community.</p>
+                    <p>Whether you're craving our famous Kota specials, mouth-watering wings, or sweet treats, we've got something for everyone. We pride ourselves on fast service, competitive prices, and unforgettable taste.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>Fresh Ingredients</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Fast Service</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <span>Made with Love</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="marketing1.jpg" alt="Our Story" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Order Hotline</h4>
+                            <p><a href="tel:0712351559">071 235 1559</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <h4>Delivery</h4>
+                            <p><a href="tel:0607034900">060 703 4900</a></p>
+                            <p><a href="tel:0730602399">073 060 2399</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <div>
+                            <h4>Follow Us</h4>
+                            <p><a href="https://www.facebook.com/profile.php?id=100093348639590" target="_blank">Facebook Page</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Operating Hours</h4>
+                            <p>Mon - Sun: 8:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-form">
+                    <h3>Quick Order Form</h3>
+                    <form id="orderForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                        <input type="text" placeholder="Delivery Address" required>
+                        <textarea placeholder="Special Instructions" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <div id="cart" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: R<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Ridale Food Spot</h4>
+                    <p>Fresh, Fast & Delicious Food</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Order: 071 235 1559</p>
+                    <p>Delivery: 060 703 4900</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ridale Food Spot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
